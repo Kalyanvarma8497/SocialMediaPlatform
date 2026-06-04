@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>User Login</h1>
+
+<input type="text" id="username"
+placeholder="Username">
+
+<br><br>
+
+<input type="password" id="password"
+placeholder="Password">
+
+<br><br>
+
+<button onclick="login()">
+Login
+</button>
+
+<p id="result"></p>
+
+<script>
+
+function login()
+{
+    let user =
+    document.getElementById("username").value;
+
+    let pass =
+    document.getElementById("password").value;
+
+    let savedUser =
+    localStorage.getItem("username");
+
+    let savedPass =
+    localStorage.getItem("password");
+
+    if(user===savedUser && pass===savedPass)
+    {
+        window.location.href="profile.html";
+    }
+    else
+    {
+        document.getElementById("result").innerHTML =
+        "Invalid Credentials!";
+    }
+}
+
+</script>
+
+</body>
+</html>
